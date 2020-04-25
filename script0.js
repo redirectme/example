@@ -345,8 +345,8 @@ $("#block1").show();
 function ask2(p) {
  b2[etap2]=p;
 //alert(p);
-$("#block2 .info").css('height','30%');
-$("#block2 .infotext").css('top','8%');
+$("#block2 .info").css('height','30vh');
+$("#block2 .infotext").css('top','8vh');
 var i=p%10;
 var j=(p-i)/10;                   
 $("#block2 .infotext p").html(qts[((i*2+j-1)*(1)+0)%16+5].quote);
@@ -386,8 +386,8 @@ for(var j=1;j<=2;j++)
 // $("#p"+j+i).innerText=qts[i*2+j-1+3].quote;
 document.getElementById('p'+j+i).innerHTML=kwqts[((i*2+j-1)*sd2+sd1)%16+5].quote;
 $('#block2 .infotext').html('<h1>'+kwqts[t].quote+'</h1><p></p>');
-$("#block2 .info").css('height','13%');
-$("#block2 .infotext").css('top','3%');
+$("#block2 .info").css('height','13vh');
+$("#block2 .infotext").css('top','4vh');
 $('.exit').hide();
 $("#block2 table").show();
 $("#block2 .deltext").hide();
