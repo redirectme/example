@@ -262,10 +262,10 @@ margin-top: 6vh;
 
 .infotext{
 position: absolute;
-width: 67%;
-height: 13%;
+width: 91vh;
+height: 13vh;
 right: 0;
-top: 3%;
+top: 4vh;
 font-size: calc(3.2vh - 0.1rem);
 text-align: center;
 }
