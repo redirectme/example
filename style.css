@@ -283,15 +283,17 @@ text-align: center;
 }
 
 
-.deltext{
-position: absolute;
-width: 3%;
-height: 6%;
-right: 7%;
-top: 6%;
-background: url(deltxt.png) no-repeat;
-background-size: 100% 100%;
+.deltext
 
+{
+    position: absolute;
+    width: 4%;
+    height: 7%;
+    right: 7.3%;
+    top: 6%;
+
+    background: url(deltxt.png) no-repeat;
+    background-size: 100% 100%;
 }
 
 .mardeltext{
@@ -381,7 +383,7 @@ height: 10%;
 left: 0%;
 top: 0%;
 background: url(btnret.png) no-repeat;
-    background-size: auto;
+background-size: 100% 100%;
 
 }
 
