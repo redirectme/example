@@ -1,0 +1,57 @@
+body{
+margin:0;
+font-size: -moz-calc(4vw - 0.2rem);
+font-size: calc(4vw - 0.2rem);
+}
+
+.slide{
+ position:relative;
+ background-size:100% 100%;
+ height:100vh;
+ width:143vh;
+}
+
+.selectover{
+opacity:0.8;
+}
+
+.selectover:hover{
+opacity:1;
+}
+
+
+.selectover2{
+opacity:1;
+}
+
+.selectover2:hover{
+opacity:0.8;
+}
+
+
+.selectover.bordover{
+opacity:0.8;
+}
+
+
+.bordover:hover{
+border: gray solid 2px;
+border-radius: 5%;
+}
+
+
+.selectover.bordover:hover{
+opacity:1;
+border: gray solid 2px;
+border-radius: 5%;
+}
+
+#safe{
+position: absolute;
+font-family: Arial, Helvetica, sans-serif;
+font-weight: bold;
+font-size: calc( 10.32205vh - 0.1rem);
+width: 29.47686vh;height: 10.32205vh;
+top: 30.05028vh;left: 46.52758vh;background-color:#000000;
+color:#FF9900;
+}
