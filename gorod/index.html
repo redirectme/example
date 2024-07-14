@@ -1,0 +1,962 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+<head>
+<title>«Я город свой знаю, ведь я в нем живу»</title>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <link rel="stylesheet" type="text/css" href="reset.css">
+  <link rel="stylesheet" type="text/css" href="game.css">
+  <script src="jquery-3.5.1.min.js"></script>
+  <script src="script0.js" type="text/javascript"></script>
+</head>
+
+
+<body>
+<center>
+<div id="slide1" name="slide1" class="slide" style="background:url(img/slide1.jpg) no-repeat;position:relative;background-size: 100% 100%;">
+<div id="shape_1_1" name="shape_1_1" class="selectover2" style="background:url(img/shape_1_1.png) no-repeat;background-size: 100% 100%;position:absolute;width: 21.22671vh;height: 6.041965vh;top: 88.54194vh;left: 78.20317vh;"
+ onclick="startgame()">
+</div>
+</div>
+<div id="slide2" name="slide2" class="slide" style="background:url(img/slide2.jpg) no-repeat;position:relative;background-size: 100% 100%;display:none;">
+<div id="shape_2_1" name="shape_2_1" class="selectover2" style="background:url(img/shape_2_1.png) no-repeat;background-size: 100% 100%;position:absolute;width: 31.30236vh;height: 13.33333vh;top: 20.83313vh;left: 16.75743vh;"
+ onclick="toslide(257,3, 2)">
+</div>
+<div id="shape_2_3" name="shape_2_3" class="selectover2" style="background:url(img/shape_2_3.png) no-repeat;background-size: 100% 100%;position:absolute;width: 31.28147vh;height: 13.33333vh;top: 59.37506vh;left: 10.05426vh;"
+ onclick="toslide(342,16, 2)">
+</div>
+<div id="shape_2_4" name="shape_2_4" class="selectover2" style="background:url(img/shape_2_4.png) no-repeat;background-size: 100% 100%;position:absolute;width: 31.28147vh;height: 13.33333vh;top: 54.16669vh;left: 94.9611vh;"
+ onclick="toslide(316,23, 2)">
+</div>
+<div id="shape_2_2" name="shape_2_2" class="selectover2" style="background:url(img/shape_2_2.png) no-repeat;background-size: 100% 100%;position:absolute;width: 31.28147vh;height: 13.33333vh;top: 20.83313vh;left: 92.72672vh;"
+ onclick="toslide(314,8, 2)">
+</div>
+<div id="vert1" name="vert1" class="" style="background:url(img/vert1.png) no-repeat;background-size: 100% 100%;position:absolute;width: 7.566145vh;height: 7.181175vh;top: 17.69676vh;left: 43.48032vh;"
+>
+</div>
+<div id="vert2" name="vert2" class="" style="background:url(img/vert2.png) no-repeat;background-size: 100% 100%;position:absolute;width: 7.566145vh;height: 7.181175vh;top: 18.50044vh;left: 119.9227vh;"
+>
+</div>
+<div id="vert4" name="vert4" class="" style="background:url(img/vert4.png) no-repeat;background-size: 100% 100%;position:absolute;width: 7.566145vh;height: 7.181175vh;top: 52.09997vh;left: 122.1749vh;"
+>
+</div>
+<div id="vert3" name="vert3" class="" style="background:url(img/vert3.png) no-repeat;background-size: 100% 100%;position:absolute;width: 7.566145vh;height: 7.181175vh;top: 56.67028vh;left: 36.392vh;"
+>
+</div>
+</div>
+<div id="slide3" name="slide3" class="slide" style="background:url(img/slide3.jpg) no-repeat;position:relative;background-size: 100% 100%;display:none;">
+<div id="flag1" name="flag1" class="selectover2 " style="background:url(img/flag1.png) no-repeat;background-size: 100% 100%;position:absolute;width: 38.54324vh;height: 23.9585vh;top: 19.79145vh;left: 7.819867vh;"
+ onclick="thisShape='flag1';;fun_check3();"
+>
+</div>
+<div id="flag6" name="flag6" class="selectover2 " style="background:url(img/flag6.png) no-repeat;background-size: 100% 100%;position:absolute;width: 39.71121vh;height: 23.9585vh;top: 60.52728vh;left: 94.9611vh;"
+ onclick="thisShape='flag6';;fun_check3();"
+>
+</div>
+<div id="flag3" name="flag3" class="selectover2 " style="background:url(img/flag3.png) no-repeat;background-size: 100% 100%;position:absolute;width: 39.10183vh;height: 23.9585vh;top: 19.79145vh;left: 94.9611vh;"
+ onclick="thisShape='flag3';;fun_check3();"
+>
+</div>
+<div id="flag4" name="flag4" class="selectover2 " style="background:url(img/flag4.png) no-repeat;background-size: 100% 100%;position:absolute;width: 40.21903vh;height: 23.9585vh;top: 60.52728vh;left: 6.702671vh;"
+ onclick="thisShape='flag4';;fun_check3();"
+>
+</div>
+<div id="flag5" name="flag5" class="selectover2 " style="background:url(img/flag5.png) no-repeat;background-size: 100% 100%;position:absolute;width: 38.54324vh;height: 23.9585vh;top: 60.52728vh;left: 51.39048vh;"
+ onclick="thisShape='flag5';;fun_check3();"
+>
+</div>
+<div id="flag2" name="flag2" class="selectover2 " style="background:url(img/flag2.png) no-repeat;background-size: 100% 100%;position:absolute;width: 39.10183vh;height: 23.9585vh;top: 19.79145vh;left: 51.39048vh;"
+ onclick="thisShape='flag2';;fun_check3();"
+>
+</div>
+<div class="next selectover2" style="background-size: 100% 100%;position:absolute;width: 5.608043vh;height: 5.228944vh;top: 6.249694vh;left: 132.9457vh;"
+ onclick="toslide('next', 3, 3)">
+</div>
+<div id="no36" name="no36" class="" style="background:url(img/no36.png) no-repeat;background-size: 100% 100%;position:absolute;width: 30.50415vh;height: 7.554929vh;top: 84.64951vh;left: 105.0172vh;"
+>
+</div>
+<div id="no35" name="no35" class="" style="background:url(img/no35.png) no-repeat;background-size: 100% 100%;position:absolute;width: 33.36391vh;height: 7.554929vh;top: 84.81486vh;left: 57.27995vh;"
+>
+</div>
+<div id="no34" name="no34" class="" style="background:url(img/no34.png) no-repeat;background-size: 100% 100%;position:absolute;width: 33.17326vh;height: 7.554929vh;top: 84.03283vh;left: 14.26703vh;"
+>
+</div>
+<div id="no33" name="no33" class="" style="background:url(img/no33.png) no-repeat;background-size: 100% 100%;position:absolute;width: 28.88361vh;height: 7.199402vh;top: 43.88527vh;left: 104.1572vh;"
+>
+</div>
+<div id="no32" name="no32" class="" style="background:url(img/no32.png) no-repeat;background-size: 100% 100%;position:absolute;width: 29.26491vh;height: 7.643817vh;top: 43.58549vh;left: 60.44254vh;"
+>
+</div>
+<div id="no31" name="no31" class="" style="background:url(img/no31.png) no-repeat;background-size: 100% 100%;position:absolute;width: 32.12468vh;height: 7.199402vh;top: 43.85058vh;left: 14.06842vh;"
+>
+</div>
+</div>
+<div id="slide4" name="slide4" class="slide" style="background:url(img/slide4.jpg) no-repeat;position:relative;background-size: 100% 100%;display:none;">
+<div id="btn41" name="btn41" class="bordover " style="background:url(img/btn41.png) no-repeat;background-size: 100% 100%;position:absolute;width: 18.01775vh;height: 8.526903vh;top: 74.14967vh;left: 61.36501vh;"
+ onclick="thisShape='btn41';;fun_check4();"
+>
+</div>
+<div id="no41" name="no41" class="" style="background:url(img/no41.png) no-repeat;background-size: 100% 100%;position:absolute;width: 6.758908vh;height: 6.997871vh;top: 75.09181vh;left: 78.70486vh;"
+>
+</div>
+<div id="no42" name="no42" class="" style="background:url(img/no42.png) no-repeat;background-size: 100% 100%;position:absolute;width: 6.758908vh;height: 6.997871vh;top: 75.08885vh;left: 41.55976vh;"
+>
+</div>
+<div id="no43" name="no43" class="" style="background:url(img/no43.png) no-repeat;background-size: 100% 100%;position:absolute;width: 7.566145vh;height: 7.181175vh;top: 75.00018vh;left: 124.4271vh;"
+>
+</div>
+<div id="btn42" name="btn42" class="bordover " style="background:url(img/btn42.png) no-repeat;background-size: 100% 100%;position:absolute;width: 18.01775vh;height: 8.526903vh;top: 74.14671vh;left: 24.20341vh;"
+ onclick="thisShape='btn42';;fun_check4();"
+>
+</div>
+<div id="btn43" name="btn43" class="bordover " style="background:url(img/btn43.png) no-repeat;background-size: 100% 100%;position:absolute;width: 18.01775vh;height: 8.526903vh;top: 74.14967vh;left: 106.6716vh;"
+ onclick="thisShape='btn43';;fun_check4();"
+>
+</div>
+<div class="next selectover2" style="background-size: 100% 100%;position:absolute;width: 5.608043vh;height: 5.228944vh;top: 5.900612vh;left: 132.3099vh;"
+ onclick="toslide('next', 4, 4)">
+</div>
+</div>
+<div id="slide5" name="slide5" class="slide" style="background:url(img/slide5.jpg) no-repeat;position:relative;background-size: 100% 100%;display:none;">
+<div id="btn55" name="btn55" class="selectover2 " style="background:url(img/btn55.png) no-repeat;background-size: 100% 100%;position:absolute;width: 41.33622vh;height: 9.375066vh;top: 84.72432vh;left: 94.02219vh;"
+ onclick="thisShape='btn55';;fun_check5();"
+>
+</div>
+<div id="btn56" name="btn56" class="selectover2 " style="background:url(img/btn56.png) no-repeat;background-size: 100% 100%;position:absolute;width: 41.33622vh;height: 9.375066vh;top: 62.59982vh;left: 94.02219vh;"
+ onclick="thisShape='btn56';;fun_check5();"
+>
+</div>
+<div id="btn54" name="btn54" class="selectover2 " style="background:url(img/btn54.png) no-repeat;background-size: 100% 100%;position:absolute;width: 41.33622vh;height: 9.375066vh;top: 35.30021vh;left: 94.02219vh;"
+ onclick="thisShape='btn54';;fun_check5();"
+>
+</div>
+<div id="btn51" name="btn51" class="bordover " style="background:url(img/btn51.png) no-repeat;background-size: 100% 100%;position:absolute;width: 14.31931vh;height: 7.629338vh;top: 24.6622vh;left: 68.35264vh;"
+ onclick="thisShape='btn51';;fun_check5();"
+>
+</div>
+<div id="btn52" name="btn52" class="bordover " style="background:url(img/btn52.png) no-repeat;background-size: 100% 100%;position:absolute;width: 14.31931vh;height: 7.629338vh;top: 50.70405vh;left: 68.14841vh;"
+ onclick="thisShape='btn52';;fun_check5();"
+>
+</div>
+<div id="btn53" name="btn53" class="bordover " style="background:url(img/btn53.png) no-repeat;background-size: 100% 100%;position:absolute;width: 14.31931vh;height: 7.629338vh;top: 76.7459vh;left: 68.14841vh;"
+ onclick="thisShape='btn53';;fun_check5();"
+>
+</div>
+<div class="next selectover2" style="background-size: 100% 100%;position:absolute;width: 5.608043vh;height: 5.228944vh;top: 5.900627vh;left: 132.9457vh;"
+ onclick="toslide('next', 5, 5)">
+</div>
+</div>
+<div id="slide6" name="slide6" class="slide" style="background:url(img/slide6.jpg) no-repeat;position:relative;background-size: 100% 100%;display:none;">
+<div id="btn63" name="btn63" class="selectover2 " style="background:url(img/btn63.png) no-repeat;background-size: 100% 100%;position:absolute;width: 31.83297vh;height: 37.69029vh;top: 18.74978vh;left: 74.18128vh;"
+ onclick="thisShape='btn63';;fun_check6();"
+>
+</div>
+<div id="btn62" name="btn62" class="selectover2 " style="background:url(img/btn62.png) no-repeat;background-size: 100% 100%;position:absolute;width: 33.45338vh;height: 37.69029vh;top: 31.10026vh;left: 38.84283vh;"
+ onclick="thisShape='btn62';;fun_check6();"
+>
+</div>
+<div id="btn64" name="btn64" class="selectover2 " style="background:url(img/btn64.png) no-repeat;background-size: 100% 100%;position:absolute;width: 33.51589vh;height: 37.69029vh;top: 32.15025vh;left: 107.2038vh;"
+ onclick="thisShape='btn64';;fun_check6();"
+>
+</div>
+<div id="btn61" name="btn61" class="selectover2 " style="background:url(img/btn61.png) no-repeat;background-size: 100% 100%;position:absolute;width: 30.16427vh;height: 37.7023vh;top: 18.74978vh;left: 6.702671vh;"
+ onclick="thisShape='btn61';;fun_check6();"
+>
+</div>
+<div id="no61" name="no61" class="" style="background:url(img/no61.png) no-repeat;background-size: 100% 100%;position:absolute;width: 32.69663vh;height: 7.732691vh;top: 55.00362vh;left: 3.800385vh;"
+>
+</div>
+<div id="no62" name="no62" class="" style="background:url(img/no62.png) no-repeat;background-size: 100% 100%;position:absolute;width: 38.60681vh;height: 7.910455vh;top: 67.10901vh;left: 34.73561vh;"
+>
+</div>
+<div id="no63" name="no63" class="" style="background:url(img/no63.png) no-repeat;background-size: 100% 100%;position:absolute;width: 26.50048vh;height: 7.732691vh;top: 54.87955vh;left: 75.47416vh;"
+>
+</div>
+<div id="no64" name="no64" class="" style="background:url(img/no64.png) no-repeat;background-size: 100% 100%;position:absolute;width: 46.0422vh;height: 7.910455vh;top: 68.89973vh;left: 95.76614vh;"
+>
+</div>
+<div class="next selectover2" style="background-size: 100% 100%;position:absolute;width: 5.608043vh;height: 5.228944vh;top: 6.249694vh;left: 132.9457vh;"
+ onclick="toslide('next', 6, 6)">
+</div>
+</div>
+<div id="slide7" name="slide7" class="slide" style="background:url(img/slide7.jpg) no-repeat;position:relative;background-size: 100% 100%;display:none;">
+<div class="tomenu selectover2" style="background-size: 100% 100%;position:absolute;width: 5.608043vh;height: 5.228944vh;top: 5.900612vh;left: 4.860937vh;"
+ onclick="toslide(324,2, 7)">
+</div>
+</div>
+<div id="slide8" name="slide8" class="slide" style="background:url(img/slide8.jpg) no-repeat;position:relative;background-size: 100% 100%;display:none;">
+<div id="no85" name="no85" class="" style="background:url(img/no85.png) no-repeat;background-size: 100% 100%;position:absolute;width: 7.566145vh;height: 7.181175vh;top: 54.28244vh;left: 89.55488vh;"
+>
+</div>
+<div id="no81" name="no81" class="" style="background:url(img/no81.png) no-repeat;background-size: 100% 100%;position:absolute;width: 6.758908vh;height: 6.997871vh;top: 24.99982vh;left: 85.9678vh;"
+>
+</div>
+<div id="no82" name="no82" class="" style="background:url(img/no82.png) no-repeat;background-size: 100% 100%;position:absolute;width: 6.758908vh;height: 6.997871vh;top: 31.24987vh;left: 115.0149vh;"
+>
+</div>
+<div id="no83" name="no83" class="" style="background:url(img/no83.png) no-repeat;background-size: 100% 100%;position:absolute;width: 6.758908vh;height: 6.997871vh;top: 36.45824vh;left: 60.27231vh;"
+>
+</div>
+<div id="no84" name="no84" class="" style="background:url(img/no84.png) no-repeat;background-size: 100% 100%;position:absolute;width: 6.758908vh;height: 6.997871vh;top: 42.70828vh;left: 71.44426vh;"
+>
+</div>
+<div id="btn81" name="btn81" class="bordover " style="background:url(img/btn81.png) no-repeat;background-size: 100% 100%;position:absolute;width: 74.82372vh;height: 4.199942vh;top: 25.85033vh;left: 10.69009vh;"
+ onclick="thisShape='btn81';;fun_check8();"
+>
+</div>
+<div id="btn82" name="btn82" class="bordover " style="background:url(img/btn82.png) no-repeat;background-size: 100% 100%;position:absolute;width: 103.6021vh;height: 4.385127vh;top: 31.96506vh;left: 10.69009vh;"
+ onclick="thisShape='btn82';;fun_check8();"
+>
+</div>
+<div id="btn83" name="btn83" class="bordover " style="background:url(img/btn83.png) no-repeat;background-size: 100% 100%;position:absolute;width: 49.09271vh;height: 3.829571vh;top: 37.77054vh;left: 10.69008vh;"
+ onclick="thisShape='btn83';;fun_check8();"
+>
+</div>
+<div id="btn84" name="btn84" class="bordover " style="background:url(img/btn84.png) no-repeat;background-size: 100% 100%;position:absolute;width: 59.6838vh;height: 4.879557vh;top: 43.88527vh;left: 10.69009vh;"
+ onclick="thisShape='btn84';;fun_check8();"
+>
+</div>
+<div id="btn85" name="btn85" class="bordover " style="background:url(img/btn85.png) no-repeat;background-size: 100% 100%;position:absolute;width: 117.314vh;height: 11.92021vh;top: 49.62963vh;left: 10.49148vh;"
+ onclick="thisShape='btn85';;fun_check8();"
+>
+</div>
+<div class="next selectover2" style="background-size: 100% 100%;position:absolute;width: 5.608043vh;height: 5.228944vh;top: 6.249694vh;left: 132.9457vh;"
+ onclick="toslide('next', 8, 8)">
+</div>
+</div>
+<div id="slide9" name="slide9" class="slide" style="background:url(img/slide9.jpg) no-repeat;position:relative;background-size: 100% 100%;display:none;">
+<div id="btn91" name="btn91" class="selectover2 " style="background:url(img/btn91.png) no-repeat;background-size: 100% 100%;position:absolute;width: 41.33622vh;height: 9.375066vh;top: 62.50008vh;left: 14.52304vh;"
+ onclick="thisShape='btn91';;fun_check9();"
+>
+</div>
+<div id="btn92" name="btn92" class="selectover2 " style="background:url(img/btn92.png) no-repeat;background-size: 100% 100%;position:absolute;width: 41.33622vh;height: 9.375066vh;top: 72.91682vh;left: 14.52304vh;"
+ onclick="thisShape='btn92';;fun_check9();"
+>
+</div>
+<div id="btn93" name="btn93" class="selectover2 " style="background:url(img/btn93.png) no-repeat;background-size: 100% 100%;position:absolute;width: 41.33622vh;height: 9.375066vh;top: 83.33356vh;left: 14.52304vh;"
+ onclick="thisShape='btn93';;fun_check9();"
+>
+</div>
+<div id="btn94" name="btn94" class="selectover2 " style="background:url(img/btn94.png) no-repeat;background-size: 100% 100%;position:absolute;width: 41.33622vh;height: 9.375066vh;top: 62.50008vh;left: 86.02354vh;"
+ onclick="thisShape='btn94';;fun_check9();"
+>
+</div>
+<div id="btn95" name="btn95" class="selectover2 " style="background:url(img/btn95.png) no-repeat;background-size: 100% 100%;position:absolute;width: 41.33622vh;height: 9.375066vh;top: 72.91682vh;left: 86.02354vh;"
+ onclick="thisShape='btn95';;fun_check9();"
+>
+</div>
+<div id="btn96" name="btn96" class="selectover2 " style="background:url(img/btn96.png) no-repeat;background-size: 100% 100%;position:absolute;width: 41.33622vh;height: 9.375066vh;top: 83.33356vh;left: 86.02354vh;"
+ onclick="thisShape='btn96';;fun_check9();"
+>
+</div>
+<div id="no92" name="no92" class="" style="background:url(img/no92.png) no-repeat;background-size: 100% 100%;position:absolute;width: 6.758908vh;height: 6.997871vh;top: 72.91682vh;left: 59.21085vh;"
+>
+</div>
+<div id="no93" name="no93" class="" style="background:url(img/no93.png) no-repeat;background-size: 100% 100%;position:absolute;width: 6.758908vh;height: 6.997871vh;top: 83.33356vh;left: 59.21085vh;"
+>
+</div>
+<div id="no94" name="no94" class="" style="background:url(img/no94.png) no-repeat;background-size: 100% 100%;position:absolute;width: 6.758908vh;height: 6.997871vh;top: 62.50008vh;left: 129.5942vh;"
+>
+</div>
+<div id="no95" name="no95" class="" style="background:url(img/no95.png) no-repeat;background-size: 100% 100%;position:absolute;width: 6.758908vh;height: 6.997871vh;top: 72.91682vh;left: 129.5942vh;"
+>
+</div>
+<div id="no96" name="no96" class="" style="background:url(img/no96.png) no-repeat;background-size: 100% 100%;position:absolute;width: 6.758908vh;height: 6.997871vh;top: 83.33356vh;left: 129.5942vh;"
+>
+</div>
+<div id="no91" name="no91" class="" style="background:url(img/no91.png) no-repeat;background-size: 100% 100%;position:absolute;width: 7.540357vh;height: 7.151866vh;top: 62.50008vh;left: 59.21085vh;"
+>
+</div>
+<div class="next selectover2" style="background-size: 100% 100%;position:absolute;width: 5.608043vh;height: 5.228944vh;top: 6.249694vh;left: 132.9457vh;"
+ onclick="toslide('next', 9, 9)">
+</div>
+</div>
+<div id="slide10" name="slide10" class="slide" style="background:url(img/slide10.jpg) no-repeat;position:relative;background-size: 100% 100%;display:none;">
+<div id="pm2" name="pm2" class="selectover2 " style="background:url(img/pm2.png) no-repeat;background-size: 100% 100%;position:absolute;width: 4.65363vh;height: 4.339049vh;top: 44.79163vh;left: 80.43756vh;"
+ onclick="thisShape='pm2';;fun_check10();"
+>
+</div>
+<div id="pm1" name="pm1" class="selectover2 " style="background:url(img/pm1.png) no-repeat;background-size: 100% 100%;position:absolute;width: 4.65363vh;height: 4.339049vh;top: 37.49991vh;left: 88.25793vh;"
+ onclick="thisShape='pm1';;fun_check10();"
+>
+</div>
+<div id="pm6" name="pm6" class="selectover2 " style="background:url(img/pm6.png) no-repeat;background-size: 100% 100%;position:absolute;width: 4.65363vh;height: 4.339049vh;top: 59.37506vh;left: 77.08598vh;"
+ onclick="thisShape='pm6';;fun_check10();"
+>
+</div>
+<div id="pm4" name="pm4" class="selectover2 " style="background:url(img/pm4.png) no-repeat;background-size: 100% 100%;position:absolute;width: 4.65363vh;height: 4.339049vh;top: 53.12502vh;left: 83.78915vh;"
+ onclick="thisShape='pm4';;fun_check10();"
+>
+</div>
+<div id="pm5" name="pm5" class="selectover2 " style="background:url(img/pm5.png) no-repeat;background-size: 100% 100%;position:absolute;width: 4.65363vh;height: 4.339049vh;top: 57.29172vh;left: 81.55476vh;"
+ onclick="thisShape='pm5';;fun_check10();"
+>
+</div>
+<div id="pm3" name="pm3" class="selectover2 " style="background:url(img/pm3.png) no-repeat;background-size: 100% 100%;position:absolute;width: 4.65363vh;height: 4.339049vh;top: 47.91665vh;left: 84.90634vh;"
+ onclick="thisShape='pm3';;fun_check10();"
+>
+</div>
+<div id="pm7" name="pm7" class="selectover2 " style="background:url(img/pm7.png) no-repeat;background-size: 100% 100%;position:absolute;width: 4.65363vh;height: 4.339049vh;top: 59.37506vh;left: 72.6172vh;"
+ onclick="thisShape='pm7';;fun_check10();"
+>
+</div>
+<div id="pm8" name="pm8" class="selectover2 " style="background:url(img/pm8.png) no-repeat;background-size: 100% 100%;position:absolute;width: 4.65363vh;height: 4.339049vh;top: 75.00018vh;left: 65.91402vh;"
+ onclick="thisShape='pm8';;fun_check10();"
+>
+</div>
+<div id="pm9" name="pm9" class="selectover2 " style="background:url(img/pm9.png) no-repeat;background-size: 100% 100%;position:absolute;width: 4.65363vh;height: 4.339049vh;top: 70.83348vh;left: 101.6643vh;"
+ onclick="thisShape='pm9';;fun_check10();"
+>
+</div>
+<div id="pm10" name="pm10" class="selectover2 " style="background:url(img/pm10.png) no-repeat;background-size: 100% 100%;position:absolute;width: 4.65363vh;height: 4.339049vh;top: 29.16652vh;left: 21.22621vh;"
+ onclick="thisShape='pm10';;fun_check10();"
+>
+</div>
+<div id="pm30" name="pm30" class="selectover2 " style="background:url(img/pm30.png) no-repeat;background-size: 100% 100%;position:absolute;width: 4.65363vh;height: 4.339049vh;top: 65.62511vh;left: 24.5778vh;"
+ onclick="thisShape='pm30';;fun_check10();"
+>
+</div>
+<div id="pm40" name="pm40" class="selectover2 " style="background:url(img/pm40.png) no-repeat;background-size: 100% 100%;position:absolute;width: 4.65363vh;height: 4.339049vh;top: 33.33322vh;left: 116.1878vh;"
+ onclick="thisShape='pm40';;fun_check10();"
+>
+</div>
+<div id="pm50" name="pm50" class="selectover2 " style="background:url(img/pm50.png) no-repeat;background-size: 100% 100%;position:absolute;width: 4.65363vh;height: 4.339049vh;top: 53.12502vh;left: 127.3598vh;"
+ onclick="thisShape='pm50';;fun_check10();"
+>
+</div>
+<div id="pm20" name="pm20" class="selectover2 " style="background:url(img/pm20.png) no-repeat;background-size: 100% 100%;position:absolute;width: 4.65363vh;height: 4.339049vh;top: 39.58326vh;left: 50.27329vh;"
+ onclick="thisShape='pm20';;fun_check10();"
+>
+</div>
+<div id="yes01" name="yes01" class="" style="background:url(img/yes01.png) no-repeat;background-size: 100% 100%;position:absolute;width: 7.566145vh;height: 7.181175vh;top: 35.85576vh;left: 87.19997vh;"
+>
+</div>
+<div id="yes02" name="yes02" class="" style="background:url(img/yes02.png) no-repeat;background-size: 100% 100%;position:absolute;width: 7.566145vh;height: 7.181175vh;top: 43.39084vh;left: 79.24971vh;"
+>
+</div>
+<div id="yes03" name="yes03" class="" style="background:url(img/yes03.png) no-repeat;background-size: 100% 100%;position:absolute;width: 7.566145vh;height: 7.181175vh;top: 46.41854vh;left: 84.22081vh;"
+>
+</div>
+<div id="yes04" name="yes04" class="" style="background:url(img/yes04.png) no-repeat;background-size: 100% 100%;position:absolute;width: 7.566145vh;height: 7.181175vh;top: 51.66847vh;left: 82.89803vh;"
+>
+</div>
+<div id="yes05" name="yes05" class="" style="background:url(img/yes05.png) no-repeat;background-size: 100% 100%;position:absolute;width: 7.566145vh;height: 7.181175vh;top: 55.74435vh;left: 80.50887vh;"
+>
+</div>
+<div id="yes06" name="yes06" class="" style="background:url(img/yes06.png) no-repeat;background-size: 100% 100%;position:absolute;width: 7.566145vh;height: 7.181175vh;top: 58.39988vh;left: 76.33611vh;"
+>
+</div>
+<div id="yes07" name="yes07" class="" style="background:url(img/yes07.png) no-repeat;background-size: 100% 100%;position:absolute;width: 7.566145vh;height: 7.181175vh;top: 58.2147vh;left: 71.69861vh;"
+>
+</div>
+<div id="yes08" name="yes08" class="" style="background:url(img/yes08.png) no-repeat;background-size: 100% 100%;position:absolute;width: 7.566145vh;height: 7.181175vh;top: 73.65524vh;left: 64.94196vh;"
+>
+</div>
+<div id="yes09" name="yes09" class="" style="background:url(img/yes09.png) no-repeat;background-size: 100% 100%;position:absolute;width: 7.566145vh;height: 7.181175vh;top: 69.76453vh;left: 100.5802vh;"
+>
+</div>
+<div id='most' name='most'>
+<p>&#32;</p></div>
+<div class="next selectover2" style="background-size: 100% 100%;position:absolute;width: 5.608043vh;height: 5.228944vh;top: 6.249694vh;left: 132.9457vh;"
+ onclick="toslide('next', 10, 10)">
+</div>
+</div>
+<div id="slide11" name="slide11" class="slide" style="background:url(img/slide11.jpg) no-repeat;position:relative;background-size: 100% 100%;display:none;">
+<div class="next selectover2" style="background-size: 100% 100%;position:absolute;width: 5.608043vh;height: 5.228944vh;top: 6.249694vh;left: 132.9457vh;"
+ onclick="toslide('next', 11, 11)">
+</div>
+</div>
+<div id="slide12" name="slide12" class="slide" style="background:url(img/slide12.jpg) no-repeat;position:relative;background-size: 100% 100%;display:none;">
+<div id="sh12_2" name="sh12_2" class="bordover " style="background:url(img/sh12_2.png) no-repeat;background-size: 100% 100%;position:absolute;width: 58.55769vh;height: 37.79948vh;top: 18.50044vh;left: 74.87833vh;"
+ onclick="thisShape='sh12_2';;fun_check12();"
+>
+</div>
+<div id="sh12_1" name="sh12_1" class="bordover " style="background:url(img/sh12_1.png) no-repeat;background-size: 100% 100%;position:absolute;width: 51.80103vh;height: 37.79948vh;top: 18.50044vh;left: 11.8162vh;"
+ onclick="thisShape='sh12_1';;fun_check12();"
+>
+</div>
+<div id="sh12_3" name="sh12_3" class="bordover " style="background:url(img/sh12_3.png) no-repeat;background-size: 100% 100%;position:absolute;width: 52.92714vh;height: 36.74949vh;top: 57.3499vh;left: 11.08732vh;"
+ onclick="thisShape='sh12_3';;fun_check12();"
+>
+</div>
+<div id="sh12_4" name="sh12_4" class="bordover " style="background:url(img/sh12_4.png) no-repeat;background-size: 100% 100%;position:absolute;width: 58.55769vh;height: 37.79948vh;top: 56.97953vh;left: 74.87833vh;"
+ onclick="thisShape='sh12_4';;fun_check12();"
+>
+</div>
+<div id="yes22" name="yes22" class="" style="background:url(img/yes22.png) no-repeat;background-size: 100% 100%;position:absolute;width: 6.758908vh;height: 6.997871vh;top: 19.55042vh;left: 76.00444vh;"
+>
+</div>
+<div id="yes23" name="yes23" class="" style="background:url(img/yes23.png) no-repeat;background-size: 100% 100%;position:absolute;width: 6.758908vh;height: 6.997871vh;top: 58.89431vh;left: 12.01482vh;"
+>
+</div>
+<div id="yes24" name="yes24" class="" style="background:url(img/yes24.png) no-repeat;background-size: 100% 100%;position:absolute;width: 6.758908vh;height: 6.997871vh;top: 58.70913vh;left: 76.93194vh;"
+>
+</div>
+<div id="yes21" name="yes21" class="" style="background:url(img/yes21.png) no-repeat;background-size: 100% 100%;position:absolute;width: 7.566145vh;height: 7.181175vh;top: 19.18005vh;left: 12.14787vh;"
+>
+</div>
+<div class="next selectover2" style="background-size: 100% 100%;position:absolute;width: 5.608043vh;height: 5.228944vh;top: 12.20052vh;left: 132.3099vh;"
+ onclick="toslide('next', 12, 12)">
+</div>
+</div>
+<div id="slide13" name="slide13" class="slide" style="background:url(img/slide13.jpg) no-repeat;position:relative;background-size: 100% 100%;display:none;">
+<div class="next selectover2" style="background-size: 100% 100%;position:absolute;width: 5.608043vh;height: 5.228944vh;top: 6.950598vh;left: 110.9138vh;"
+ onclick="toslide('next', 13, 13)">
+</div>
+</div>
+<div id="slide14" name="slide14" class="slide" style="background:url(img/slide14.jpg) no-repeat;position:relative;background-size: 100% 100%;display:none;">
+<div id="btn141" name="btn141" class="selectover2 " style="background:url(img/btn141.png) no-repeat;background-size: 100% 100%;position:absolute;width: 79.32087vh;height: 5.20837vh;top: 31.57956vh;left: 32.39816vh;"
+ onclick="thisShape='btn141';;fun_check14();"
+>
+</div>
+<div id="btn142" name="btn142" class="selectover2 " style="background:url(img/btn142.png) no-repeat;background-size: 100% 100%;position:absolute;width: 80.43806vh;height: 5.20837vh;top: 59.92307vh;left: 31.19649vh;"
+ onclick="thisShape='btn142';;fun_check14();"
+>
+</div>
+<div id="btn143" name="btn143" class="selectover2 " style="background:url(img/btn143.png) no-repeat;background-size: 100% 100%;position:absolute;width: 56.97696vh;height: 5.20837vh;top: 88.67492vh;left: 7.008564vh;"
+ onclick="thisShape='btn143';;fun_check14();"
+>
+</div>
+<div id="btn144" name="btn144" class="selectover2 " style="background:url(img/btn144.png) no-repeat;background-size: 100% 100%;position:absolute;width: 54.74257vh;height: 5.20837vh;top: 89.01105vh;left: 79.26325vh;"
+ onclick="thisShape='btn144';;fun_check14();"
+>
+</div>
+<div id="yes41" name="yes41" class="" style="background:url(img/yes41.png) no-repeat;background-size: 100% 100%;position:absolute;width: 4.746696vh;height: 4.914523vh;top: 31.81411vh;left: 112.5652vh;"
+>
+</div>
+<div id="yes42" name="yes42" class="" style="background:url(img/yes42.png) no-repeat;background-size: 100% 100%;position:absolute;width: 4.746696vh;height: 4.914523vh;top: 59.89805vh;left: 112.4004vh;"
+>
+</div>
+<div id="yes44" name="yes44" class="" style="background:url(img/yes44.png) no-repeat;background-size: 100% 100%;position:absolute;width: 4.746696vh;height: 4.914523vh;top: 89.12309vh;left: 134.402vh;"
+>
+</div>
+<div id="yes43" name="yes43" class="" style="background:url(img/yes43.png) no-repeat;background-size: 100% 100%;position:absolute;width: 5.371117vh;height: 5.097827vh;top: 88.67492vh;left: 64.62205vh;"
+>
+</div>
+<div class="next selectover2" style="background-size: 100% 100%;position:absolute;width: 5.608043vh;height: 5.228944vh;top: 5.452435vh;left: 133.1957vh;"
+ onclick="toslide('next', 14, 14)">
+</div>
+</div>
+<div id="slide15" name="slide15" class="slide" style="background:url(img/slide15.jpg) no-repeat;position:relative;background-size: 100% 100%;display:none;">
+<div class="tomenu selectover2" style="background-size: 100% 100%;position:absolute;width: 5.608043vh;height: 5.228944vh;top: 5.900612vh;left: 4.860937vh;"
+ onclick="toslide(324,2, 15)">
+</div>
+</div>
+<div id="slide16" name="slide16" class="slide" style="background:url(img/slide16.jpg) no-repeat;position:relative;background-size: 100% 100%;display:none;">
+<div id="w1614" name="w1614" class="selectover2 " style="background:url(img/w1614.png) no-repeat;background-size: 100% 100%;position:absolute;width: 35.75vh;height: 24.04199vh;top: 15.35048vh;left: 101.905vh;"
+ onclick="thisShape='w1614';;fun_check16();"
+>
+</div>
+<div id="w1611" name="w1611" class="selectover2 " style="background:url(img/w1611.png) no-repeat;background-size: 100% 100%;position:absolute;width: 35.75vh;height: 24.04199vh;top: 15.35048vh;left: 5.059547vh;"
+ onclick="thisShape='w1611';;fun_check16();"
+>
+</div>
+<div id="w1612" name="w1612" class="selectover2 " style="background:url(img/w1612.png) no-repeat;background-size: 100% 100%;position:absolute;width: 35.75vh;height: 24.04199vh;top: 42.47343vh;left: 5.059547vh;"
+ onclick="thisShape='w1612';;fun_check16();"
+>
+</div>
+<div id="w1615" name="w1615" class="selectover2 " style="background:url(img/w1615.png) no-repeat;background-size: 100% 100%;position:absolute;width: 35.75vh;height: 24.04199vh;top: 42.47343vh;left: 101.905vh;"
+ onclick="thisShape='w1615';;fun_check16();"
+>
+</div>
+<div id="w1616" name="w1616" class="selectover2 " style="background:url(img/w1616.png) no-repeat;background-size: 100% 100%;position:absolute;width: 35.75vh;height: 24.04199vh;top: 69.59638vh;left: 101.905vh;"
+ onclick="thisShape='w1616';;fun_check16();"
+>
+</div>
+<div id="w1613" name="w1613" class="selectover2 " style="background:url(img/w1613.png) no-repeat;background-size: 100% 100%;position:absolute;width: 35.75025vh;height: 24.04389vh;top: 69.59638vh;left: 5.059547vh;"
+ onclick="thisShape='w1613';;fun_check16();"
+>
+</div>
+<div class="next selectover2" style="background-size: 100% 100%;position:absolute;width: 5.608043vh;height: 5.228944vh;top: 5.452435vh;left: 133.1957vh;"
+ onclick="toslide('next', 16, 16)">
+</div>
+<div id="w1621" name="w1621" class="selectover2 " style="background:url(img/w1621.png) no-repeat;background-size: 100% 100%;position:absolute;width: 14.0748vh;height: 18.3727vh;top: 15.35048vh;left: 56.86058vh;"
+ onclick="thisShape='w1621';;fun_check16();"
+>
+</div>
+<div id="w1618" name="w1618" class="selectover2 " style="background:url(img/w1618.png) no-repeat;background-size: 100% 100%;position:absolute;width: 14.0748vh;height: 18.3727vh;top: 47.90003vh;left: 73.75222vh;"
+ onclick="thisShape='w1618';;fun_check16();"
+>
+</div>
+<div id="w1617" name="w1617" class="selectover2 " style="background:url(img/w1617.png) no-repeat;background-size: 100% 100%;position:absolute;width: 14.0748vh;height: 18.3727vh;top: 69.94972vh;left: 73.71885vh;"
+ onclick="thisShape='w1617';;fun_check16();"
+>
+</div>
+<div id="w1619" name="w1619" class="selectover2 " style="background:url(img/w1619.png) no-repeat;background-size: 100% 100%;position:absolute;width: 14.0748vh;height: 18.3727vh;top: 17.45045vh;left: 73.75222vh;"
+ onclick="thisShape='w1619';;fun_check16();"
+>
+</div>
+<div id="w1622" name="w1622" class="selectover2 " style="background:url(img/w1622.png) no-repeat;background-size: 100% 100%;position:absolute;width: 14.0748vh;height: 18.3727vh;top: 37.40017vh;left: 57.98669vh;"
+ onclick="thisShape='w1622';;fun_check16();"
+>
+</div>
+<div id="w1620" name="w1620" class="selectover2 " style="background:url(img/w1620.png) no-repeat;background-size: 100% 100%;position:absolute;width: 14.0748vh;height: 18.3727vh;top: 62.59982vh;left: 57.37357vh;"
+ onclick="thisShape='w1620';;fun_check16();"
+>
+</div>
+<div class="check17 " style="background-size: 100% 100%;position:absolute;width: 7.540357vh;height: 7.151866vh;top: 4.850627vh;left: 131.1838vh;"
+ onclick="thisShape='check17';;fun_check17();"
+>
+</div>
+</div>
+<div id="slide17" name="slide17" class="slide" style="background:url(img/slide17.jpg) no-repeat;position:relative;background-size: 100% 100%;display:none;">
+<div class="next selectover2" style="background-size: 100% 100%;position:absolute;width: 5.608043vh;height: 5.228944vh;top: 6.10576vh;left: 131.8699vh;"
+ onclick="toslide('next', 17, 17)">
+</div>
+<div class="check17 " style="background-size: 100% 100%;position:absolute;width: 7.540357vh;height: 7.151866vh;top: 4.850627vh;left: 131.1838vh;"
+ onclick="thisShape='check17';;fun_check17();"
+>
+</div>
+<div class="block17"  style="position:relative;">
+<p>
+Памятник «<select autocomplete="off" name="sel1" id="sel1" size="1" > 
+<option value='s0'>-выбрать-</option>
+<option value='s1'>встреч</option>
+<option value='s2'>Ковальчук</option>
+<option value='s3'>композиции</option>
+<option value='s4'>Победы</option>
+<option value='s5'>предложений</option>
+<option value='s6'>руки</option>
+<option value='s7'>Счастливая</option>  
+<option value='s8'>счастливую</option>
+<option value='s9'>Счастья</option>
+</select> семья» установлен на бульваре <select autocomplete="off" name="sel2" id="sel2" size="1" > 
+<option value='s0'>-выбрать-</option>
+<option value='s1'>встреч</option>
+<option value='s2'>Ковальчук</option>
+<option value='s3'>композиции</option>
+<option value='s4'>Победы</option>
+<option value='s5'>предложений</option>
+<option value='s6'>руки</option>
+<option value='s7'>Счастливая</option>
+<option value='s8'>счастливую</option>
+<option value='s9'>Счастья</option>
+</select> в 2017 году. Памятник представляет собой молодую <select autocomplete="off" name="sel3" id="sel3" size="1" > 
+<option value='s0'>-выбрать-</option>
+<option value='s1'>встреч</option>
+<option value='s2'>Ковальчук</option>
+<option value='s3'>композиции</option>
+<option value='s4'>Победы</option>
+<option value='s5'>предложений</option>
+<option value='s6'>руки</option>
+<option value='s7'>Счастливая</option>
+<option value='s8'>счастливую</option>
+<option value='s9'>Счастья</option>
+</select> семью – родителей и ребёнка, держащихся за <select autocomplete="off" name="sel4" id="sel4" size="1" > 
+<option value='s0'>-выбрать-</option>
+<option value='s1'>встреч</option>
+<option value='s2'>Ковальчук</option>
+<option value='s3'>композиции</option>
+<option value='s4'>Победы</option>
+<option value='s5'>предложений</option>
+<option value='s6'>руки</option>
+<option value='s7'>Счастливая</option>
+<option value='s8'>счастливую</option>
+<option value='s9'>Счастья</option>
+</select>, и является олицетворением <select autocomplete="off" name="sel5" id="sel5" size="1" > 
+<option value='s0'>-выбрать-</option>
+<option value='s1'>встреч</option>
+<option value='s2'>Ковальчук</option>
+<option value='s3'>композиции</option>
+<option value='s4'>Победы</option>
+<option value='s5'>предложений</option> 
+<option value='s6'>руки</option>
+<option value='s7'>Счастливая</option>
+<option value='s8'>счастливую</option>
+<option value='s9'>Счастья</option>
+</select>. Автор <select autocomplete="off" name="sel6" id="sel6" size="1" > 
+<option value='s0'>-выбрать-</option>
+<option value='s1'>встреч</option>
+<option value='s2'>Ковальчук</option>
+<option value='s3'>композиции</option>
+<option value='s4'>Победы</option>
+<option value='s5'>предложений</option>
+<option value='s6'>руки</option>
+<option value='s7'>Счастливая</option>
+<option value='s8'>счастливую</option>
+<option value='s9'>Счастья</option>
+</select> – известный скульптор Андрей <select autocomplete="off" name="sel7" id="sel7" size="1" > 
+<option value='s0'>-выбрать-</option>
+<option value='s1'>встреч</option>
+<option value='s2'>Ковальчук</option>
+<option value='s3'>композиции</option>
+<option value='s4'>Победы</option>
+<option value='s5'>предложений</option>
+<option value='s6'>руки</option>
+<option value='s7'>Счастливая</option>
+<option value='s8'>счастливую</option>
+<option value='s9'>Счастья</option>
+</select>. Этот объект горожане часто выбирают для романтических <select autocomplete="off" name="sel8" id="sel8" size="1" > 
+<option value='s0'>-выбрать-</option>
+<option value='s1'>встреч</option>
+<option value='s2'>Ковальчук</option>
+<option value='s3'>композиции</option>
+<option value='s4'>Победы</option>
+<option value='s5'>предложений</option>
+<option value='s6'>руки</option>
+<option value='s7'>Счастливая</option>
+<option value='s8'>счастливую</option>
+<option value='s9'>Счастья</option>
+</select> и <select autocomplete="off" name="sel9" id="sel9" size="1" > 
+<option value='s0'>-выбрать-</option>
+<option value='s1'>встреч</option>
+<option value='s2'>Ковальчук</option>
+<option value='s3'>композиции</option>
+<option value='s4'>Победы</option>
+<option value='s5'>предложений</option>
+<option value='s6'>руки</option>
+<option value='s7'>Счастливая</option>
+<option value='s8'>счастливую</option>
+<option value='s9'>Счастья</option>
+</select> руки и сердца.<p>
+</div>
+</div>
+<div id="slide18" name="slide18" class="slide" style="background:url(img/slide18.jpg) no-repeat;position:relative;background-size: 100% 100%;display:none;">
+<div class="next selectover2" style="background-size: 100% 100%;position:absolute;width: 5.608043vh;height: 5.228944vh;top: 6.10576vh;left: 131.8699vh;"
+ onclick="toslide('next', 18, 18)">
+</div>
+<div class="check17 " style="background-size: 100% 100%;position:absolute;width: 7.540357vh;height: 7.151866vh;top: 4.850627vh;left: 131.1838vh;"
+ onclick="thisShape='check17';;fun_check18();"
+>
+</div>
+<div class="block18"  style="position:relative;">
+<p>
+Памятник-фонтан Петру и Февронии был <select autocomplete="off" name="sel11" id="sel11" size="1" > 
+<option value='s0'>-выбрать-</option>
+<option value='s1'>верности</option>
+<option value='s2'>гостей</option>
+<option value='s3'>незабываема</option>
+<option value='s4'>открыт</option>         
+<option value='s5'>пользуется</option>
+<option value='s6'>Святые</option>
+<option value='s7'>семьи</option>
+</select> в 2010 году. <select autocomplete="off" name="sel12" id="sel12" size="1" > 
+<option value='s0'>-выбрать-</option>
+<option value='s1'>верности</option>
+<option value='s2'>гостей</option>
+<option value='s3'>незабываема</option>
+<option value='s4'>открыт</option>         
+<option value='s5'>пользуется</option>
+<option value='s6'>Святые</option>
+<option value='s7'>семьи</option>
+</select> Петр и Феврония издавна считаются на Руси покровителями <select autocomplete="off" name="sel13" id="sel13" size="1" > 
+<option value='s0'>-выбрать-</option>
+<option value='s1'>верности</option>
+<option value='s2'>гостей</option>
+<option value='s3'>незабываема</option>
+<option value='s4'>открыт</option>         
+<option value='s5'>пользуется</option>
+<option value='s6'>Святые</option>
+<option value='s7'>семьи</option>
+</select>,  любви и <select autocomplete="off" name="sel14" id="sel14" size="1" > 
+<option value='s0'>-выбрать-</option>
+<option value='s1'>верности</option>
+<option value='s2'>гостей</option>               
+<option value='s3'>незабываема</option>
+<option value='s4'>открыт</option>         
+<option value='s5'>пользуется</option>
+<option value='s6'>Святые</option>
+<option value='s7'>семьи</option>
+</select>. Памятник <select autocomplete="off" name="sel15" id="sel15" size="1" > 
+<option value='s0'>-выбрать-</option>
+<option value='s1'>верности</option>
+<option value='s2'>гостей</option>
+<option value='s3'>незабываема</option>
+<option value='s4'>открыт</option>         
+<option value='s5'>пользуется</option>
+<option value='s6'>Святые</option>
+<option value='s7'>семьи</option>
+</select> огромной популярностью у жителей и <select autocomplete="off" name="sel16" id="sel16" size="1" > 
+<option value='s0'>-выбрать-</option>
+<option value='s1'>верности</option>
+<option value='s2'>гостей</option>
+<option value='s3'>незабываема</option>
+<option value='s4'>открыт</option>         
+<option value='s5'>пользуется</option>
+<option value='s6'>Святые</option>
+<option value='s7'>семьи</option>
+</select> столицы. Композиция Петра и Февронии оригинальна и <select autocomplete="off" name="sel17" id="sel17" size="1" > 
+<option value='s0'>-выбрать-</option>
+<option value='s1'>верности</option>
+<option value='s2'>гостей</option>
+<option value='s3'>незабываема</option>
+<option value='s4'>открыт</option>         
+<option value='s5'>пользуется</option>
+<option value='s6'>Святые</option>
+<option value='s7'>семьи</option>
+</select>.<p>
+</div>
+</div>
+<div id="slide19" name="slide19" class="slide" style="background:url(img/slide19.jpg) no-repeat;position:relative;background-size: 100% 100%;display:none;">
+<div id="btn193" name="btn193" class="selectover2 " style="background:url(img/btn193.png) no-repeat;background-size: 100% 100%;position:absolute;width: 58.09415vh;height: 36.74541vh;top: 57.51133vh;left: 10.69009vh;"
+ onclick="thisShape='btn193';;fun_check19();"
+>
+</div>
+<div id="btn191" name="btn191" class="selectover2 " style="background:url(img/btn191.png) no-repeat;background-size: 100% 100%;position:absolute;width: 56.89737vh;height: 36.74541vh;top: 18.65vh;left: 11.28849vh;"
+ onclick="thisShape='btn191';;fun_check19();"
+>
+</div>
+<div id="btn192" name="btn192" class="selectover2 " style="background:url(img/btn192.png) no-repeat;background-size: 100% 100%;position:absolute;width: 58.10079vh;height: 36.74541vh;top: 18.65vh;left: 74.87833vh;"
+ onclick="thisShape='btn192';;fun_check19();"
+>
+</div>
+<div id="btn194" name="btn194" class="selectover2 " style="background:url(img/btn194.png) no-repeat;background-size: 100% 100%;position:absolute;width: 58.10079vh;height: 36.74541vh;top: 57.51133vh;left: 74.87833vh;"
+ onclick="thisShape='btn194';;fun_check19();"
+>
+</div>
+<div id="yes91" name="yes91" class="" style="background:url(img/yes91.png) no-repeat;background-size: 100% 100%;position:absolute;width: 6.758908vh;height: 6.997871vh;top: 18.50044vh;left: 59.1128vh;"
+>
+</div>
+<div id="yes94" name="yes94" class="" style="background:url(img/yes94.png) no-repeat;background-size: 100% 100%;position:absolute;width: 6.758908vh;height: 6.997871vh;top: 57.3499vh;left: 125.5533vh;"
+>
+</div>
+<div id="yes93" name="yes93" class="" style="background:url(img/yes93.png) no-repeat;background-size: 100% 100%;position:absolute;width: 6.758908vh;height: 6.997871vh;top: 58.39988vh;left: 60.23891vh;"
+>
+</div>
+<div id="yes92" name="yes92" class="" style="background:url(img/yes92.png) no-repeat;background-size: 100% 100%;position:absolute;width: 7.566145vh;height: 7.181175vh;top: 18.50044vh;left: 124.4271vh;"
+>
+</div>
+<div class="next selectover2" style="background-size: 100% 100%;position:absolute;width: 5.608043vh;height: 5.228944vh;top: 12.20054vh;left: 132.3099vh;"
+ onclick="toslide('next', 19, 19)">
+</div>
+</div>
+<div id="slide20" name="slide20" class="slide" style="background:url(img/slide20.jpg) no-repeat;position:relative;background-size: 100% 100%;display:none;">
+<div class="next selectover2" style="background-size: 100% 100%;position:absolute;width: 5.608043vh;height: 5.228944vh;top: 5.727471vh;left: 132.4956vh;"
+ onclick="toslide('next', 20, 20)">
+</div>
+</div>
+<div id="slide21" name="slide21" class="slide" style="background:url(img/slide21.jpg) no-repeat;position:relative;background-size: 100% 100%;display:none;">
+<div id="btn211" name="btn211" class="selectover2 " style="background:url(img/btn211.png) no-repeat;background-size: 100% 100%;position:absolute;width: 36.86744vh;height: 12.50009vh;top: 50vh;left: 8.937062vh;"
+ onclick="thisShape='btn211';;fun_check21();"
+>
+</div>
+<div id="btn212" name="btn212" class="selectover2 " style="background:url(img/btn212.png) no-repeat;background-size: 100% 100%;position:absolute;width: 36.86744vh;height: 12.50009vh;top: 50vh;left: 53.06628vh;"
+ onclick="thisShape='btn212';;fun_check21();"
+>
+</div>
+<div id="btn213" name="btn213" class="selectover2 " style="background:url(img/btn213.png) no-repeat;background-size: 100% 100%;position:absolute;width: 36.87598vh;height: 12.50009vh;top: 50vh;left: 97.1955vh;"
+ onclick="thisShape='btn213';;fun_check21();"
+>
+</div>
+<div class="next selectover2" style="background-size: 100% 100%;position:absolute;width: 5.608043vh;height: 5.228944vh;top: 5.727471vh;left: 132.4956vh;"
+ onclick="toslide('next', 21, 21)">
+</div>
+<div id="mb11" name="mb11" class="" style="background:url(img/mb11.png) no-repeat;background-size: 100% 100%;position:absolute;width: 6.758908vh;height: 6.997871vh;top: 49.30204vh;left: 38.84283vh;"
+>
+</div>
+<div id="mb13" name="mb13" class="" style="background:url(img/mb13.png) no-repeat;background-size: 100% 100%;position:absolute;width: 6.758908vh;height: 6.997871vh;top: 49.12317vh;left: 128.003vh;"
+>
+</div>
+<div id="mb12" name="mb12" class="" style="background:url(img/mb12.png) no-repeat;background-size: 100% 100%;position:absolute;width: 7.566145vh;height: 7.181175vh;top: 48.95001vh;left: 83.88721vh;"
+>
+</div>
+</div>
+<div id="slide22" name="slide22" class="slide" style="background:url(img/slide22.jpg) no-repeat;position:relative;background-size: 100% 100%;display:none;">
+<div class="tomenu selectover2" style="background-size: 100% 100%;position:absolute;width: 5.608043vh;height: 5.228944vh;top: 5.900612vh;left: 4.860937vh;"
+ onclick="toslide(324,2, 22)">
+</div>
+</div>
+<div id="slide23" name="slide23" class="slide" style="background:url(img/slide23.jpg) no-repeat;position:relative;background-size: 100% 100%;display:none;">
+<div id="w2312" name="w2312" class="selectover2 " style="background:url(img/w2312.png) no-repeat;background-size: 100% 100%;position:absolute;width: 33.49803vh;height: 25.30184vh;top: 53.12502vh;left: 55.87709vh;"
+ onclick="thisShape='w2312';;fun_check23();"
+>
+</div>
+<div id="w2313" name="w2313" class="selectover2 " style="background:url(img/w2313.png) no-repeat;background-size: 100% 100%;position:absolute;width: 33.49803vh;height: 25.30184vh;top: 53.12502vh;left: 100.5649vh;"
+ onclick="thisShape='w2313';;fun_check23();"
+>
+</div>
+<div id="w2311" name="w2311" class="selectover2 " style="background:url(img/w2311.png) no-repeat;background-size: 100% 100%;position:absolute;width: 33.51536vh;height: 25.2977vh;top: 53.12502vh;left: 11.17145vh;"
+ onclick="thisShape='w2311';;fun_check23();"
+>
+</div>
+<div id="w2316" name="w2316" class="selectover2 " style="background:url(img/w2316.png) no-repeat;background-size: 100% 100%;position:absolute;width: 31.28147vh;height: 10.41674vh;top: 59.44987vh;left: 32.08617vh;"
+ onclick="thisShape='w2316';;fun_check23();"
+>
+</div>
+<div id="w2314" name="w2314" class="selectover2 " style="background:url(img/w2314.png) no-repeat;background-size: 100% 100%;position:absolute;width: 31.28147vh;height: 10.41674vh;top: 46.85004vh;left: 76.00444vh;"
+ onclick="thisShape='w2314';;fun_check23();"
+>
+</div>
+<div id="w2315" name="w2315" class="selectover2 " style="background:url(img/w2315.png) no-repeat;background-size: 100% 100%;position:absolute;width: 31.28147vh;height: 10.41674vh;top: 69.94972vh;left: 77.13055vh;"
+ onclick="thisShape='w2315';;fun_check23();"
+>
+</div>
+<div class="next selectover2" style="background-size: 100% 100%;position:absolute;width: 5.608043vh;height: 5.228944vh;top: 5.727471vh;left: 132.4956vh;"
+ onclick="toslide('next', 23, 23)">
+</div>
+</div>
+<div id="slide24" name="slide24" class="slide" style="background:url(img/slide24.jpg) no-repeat;position:relative;background-size: 100% 100%;display:none;">
+<div id="btn241" name="btn241" class="selectover2 " style="background:url(img/btn241.png) no-repeat;background-size: 100% 100%;position:absolute;width: 23.4611vh;height: 8.136482vh;top: 27.22655vh;left: 4.600694vh;"
+ onclick="thisShape='btn241';;fun_check24();"
+>
+</div>
+<div id="btn244" name="btn244" class="selectover2 " style="background:url(img/btn244.png) no-repeat;background-size: 100% 100%;position:absolute;width: 23.4611vh;height: 8.124963vh;top: 74.11901vh;left: 6.777159vh;"
+ onclick="thisShape='btn244';;fun_check24();"
+>
+</div>
+<div id="btn243" name="btn243" class="selectover2 " style="background:url(img/btn243.png) no-repeat;background-size: 100% 100%;position:absolute;width: 23.4611vh;height: 9.186468vh;top: 49.89301vh;left: 32.48341vh;"
+ onclick="thisShape='btn243';;fun_check24();"
+>
+</div>
+<div id="btn242" name="btn242" class="selectover2 " style="background:url(img/btn242.png) no-repeat;background-size: 100% 100%;position:absolute;width: 21.22671vh;height: 8.136482vh;top: 28.64517vh;left: 77.16046vh;"
+ onclick="thisShape='btn242';;fun_check24();"
+>
+</div>
+<div class="next selectover2" style="background-size: 100% 100%;position:absolute;width: 5.608043vh;height: 5.228944vh;top: 5.727471vh;left: 132.8929vh;"
+ onclick="toslide('next', 24, 24)">
+</div>
+<div id="mb41" name="mb41" class="" style="background:url(img/mb41.png) no-repeat;background-size: 100% 100%;position:absolute;width: 4.746696vh;height: 4.914523vh;top: 24.42996vh;left: 3.625795vh;"
+>
+</div>
+<div id="mb42" name="mb42" class="" style="background:url(img/mb42.png) no-repeat;background-size: 100% 100%;position:absolute;width: 4.746696vh;height: 4.914523vh;top: 26.21433vh;left: 76.07471vh;"
+>
+</div>
+<div id="mb44" name="mb44" class="" style="background:url(img/mb44.png) no-repeat;background-size: 100% 100%;position:absolute;width: 4.746696vh;height: 4.914523vh;top: 71.49097vh;left: 5.625292vh;"
+>
+</div>
+<div id="mb43" name="mb43" class="" style="background:url(img/mb43.png) no-repeat;background-size: 100% 100%;position:absolute;width: 5.371117vh;height: 5.097827vh;top: 47.66973vh;left: 29.29651vh;"
+>
+</div>
+<div id="btn245" name="btn245" class="selectover2 " style="background:url(img/btn245.png) no-repeat;background-size: 100% 100%;position:absolute;width: 22.34391vh;height: 8.124963vh;top: 72.76093vh;left: 77.35001vh;"
+ onclick="thisShape='btn245';;fun_check24();"
+>
+</div>
+<div id="mb45" name="mb45" class="" style="background:url(img/mb45.png) no-repeat;background-size: 100% 100%;position:absolute;width: 4.746696vh;height: 4.914523vh;top: 69.98474vh;left: 76.26926vh;"
+>
+</div>
+</div>
+<div id="slide25" name="slide25" class="slide" style="background:url(img/slide25.jpg) no-repeat;position:relative;background-size: 100% 100%;display:none;">
+<div class="next selectover2" style="background-size: 100% 100%;position:absolute;width: 5.608043vh;height: 5.228944vh;top: 5.727471vh;left: 132.8929vh;"
+ onclick="toslide('next', 25, 25)">
+</div>
+</div>
+<div id="slide26" name="slide26" class="slide" style="background:url(img/slide26.jpg) no-repeat;position:relative;background-size: 100% 100%;display:none;">
+<div id="w2619" name="w2619" class="selectover2 " style="background:url(img/w2619.png) no-repeat;background-size: 100% 100%;position:absolute;width: 17.87513vh;height: 16.69291vh;top: 50vh;left: 57.25902vh;"
+ onclick="thisShape='w2619';;fun_check26();"
+>
+</div>
+<div id="w2624" name="w2624" class="selectover2 " style="background:url(img/w2624.png) no-repeat;background-size: 100% 100%;position:absolute;width: 16.95226vh;height: 24.94506vh;top: 17.45045vh;left: 59.51123vh;"
+ onclick="thisShape='w2624';;fun_check26();"
+>
+</div>
+<div id="w2618" name="w2618" class="selectover2 " style="background:url(img/w2618.png) no-repeat;background-size: 100% 100%;position:absolute;width: 17.90315vh;height: 16.69291vh;top: 38.45016vh;left: 58.38513vh;"
+ onclick="thisShape='w2618';;fun_check26();"
+>
+</div>
+<div id="w2623" name="w2623" class="selectover2 " style="background:url(img/w2623.png) no-repeat;background-size: 100% 100%;position:absolute;width: 17.90315vh;height: 16.69291vh;top: 38.45016vh;left: 74.15066vh;"
+ onclick="thisShape='w2623';;fun_check26();"
+>
+</div>
+<div id="w2621" name="w2621" class="selectover2 " style="background:url(img/w2621.png) no-repeat;background-size: 100% 100%;position:absolute;width: 16.94606vh;height: 24.93438vh;top: 17.45045vh;left: 75.27677vh;"
+ onclick="thisShape='w2621';;fun_check26();"
+>
+</div>
+<div id="w2622" name="w2622" class="selectover2 " style="background:url(img/w2622.png) no-repeat;background-size: 100% 100%;position:absolute;width: 17.87513vh;height: 16.66678vh;top: 32.15025vh;left: 65.86945vh;"
+ onclick="thisShape='w2622';;fun_check26();"
+>
+</div>
+<div id="w2620" name="w2620" class="selectover2 " style="background:url(img/w2620.png) no-repeat;background-size: 100% 100%;position:absolute;width: 17.90315vh;height: 16.69291vh;top: 51.04998vh;left: 74.15066vh;"
+ onclick="thisShape='w2620';;fun_check26();"
+>
+</div>
+<div class="next selectover2" style="background-size: 100% 100%;position:absolute;width: 5.608043vh;height: 5.228944vh;top: 5.727471vh;left: 132.8929vh;"
+ onclick="toslide('next', 26, 26)">
+</div>
+<div id="w2611" name="w2611" class="selectover2 " style="background:url(img/w2611.png) no-repeat;background-size: 100% 100%;position:absolute;width: 38.51149vh;height: 15.9098vh;top: 19.80198vh;left: 3.933438vh;"
+ onclick="thisShape='w2611';;fun_check26();"
+>
+</div>
+<div id="w2612" name="w2612" class="selectover2 " style="background:url(img/w2612.png) no-repeat;background-size: 100% 100%;position:absolute;width: 37.36758vh;height: 15.19874vh;top: 42.56807vh;left: 3.933438vh;"
+ onclick="thisShape='w2612';;fun_check26();"
+>
+</div>
+<div id="w2613" name="w2613" class="selectover2 " style="background:url(img/w2613.png) no-repeat;background-size: 100% 100%;position:absolute;width: 37.4629vh;height: 16.53196vh;top: 78.3221vh;left: 4.115253vh;"
+ onclick="thisShape='w2613';;fun_check26();"
+>
+</div>
+<div id="w2614" name="w2614" class="selectover2 " style="background:url(img/w2614.png) no-repeat;background-size: 100% 100%;position:absolute;width: 40.7993vh;height: 11.55461vh;top: 83.59476vh;left: 51.36493vh;"
+ onclick="thisShape='w2614';;fun_check26();"
+>
+</div>
+<div id="w2615" name="w2615" class="selectover2 " style="background:url(img/w2615.png) no-repeat;background-size: 100% 100%;position:absolute;width: 37.4629vh;height: 14.13217vh;top: 80.21878vh;left: 101.6352vh;"
+ onclick="thisShape='w2615';;fun_check26();"
+>
+</div>
+<div id="w2616" name="w2616" class="selectover2 " style="background:url(img/w2616.png) no-repeat;background-size: 100% 100%;position:absolute;width: 35.17509vh;height: 13.06559vh;top: 45.80006vh;left: 104.1572vh;"
+ onclick="thisShape='w2616';;fun_check26();"
+>
+</div>
+<div id="w2617" name="w2617" class="selectover2 " style="background:url(img/w2617.png) no-repeat;background-size: 100% 100%;position:absolute;width: 36.41433vh;height: 15.10986vh;top: 17.45045vh;left: 102.7613vh;"
+ onclick="thisShape='w2617';;fun_check26();"
+>
+</div>
+</div>
+<div id="slide27" name="slide27" class="slide" style="background:url(img/slide27.jpg) no-repeat;position:relative;background-size: 100% 100%;display:none;">
+<div id="btn271" name="btn271" class="selectover2 " style="background:url(img/btn271.png) no-repeat;background-size: 100% 100%;position:absolute;width: 31.28147vh;height: 10.41674vh;top: 61.45841vh;left: 6.702671vh;"
+ onclick="thisShape='btn271';;fun_check27();"
+>
+</div>
+<div id="btn272" name="btn272" class="selectover2 " style="background:url(img/btn272.png) no-repeat;background-size: 100% 100%;position:absolute;width: 31.28147vh;height: 10.41674vh;top: 61.45841vh;left: 54.74207vh;"
+ onclick="thisShape='btn272';;fun_check27();"
+>
+</div>
+<div id="btn273" name="btn273" class="selectover2 " style="background:url(img/btn273.png) no-repeat;background-size: 100% 100%;position:absolute;width: 31.28147vh;height: 10.41674vh;top: 61.45841vh;left: 103.8987vh;"
+ onclick="thisShape='btn273';;fun_check27();"
+>
+</div>
+<div class="next selectover2" style="background-size: 100% 100%;position:absolute;width: 5.608043vh;height: 5.228944vh;top: 5.727471vh;left: 132.8929vh;"
+ onclick="toslide('next', 27, 27)">
+</div>
+<div id="mb71" name="mb71" class="" style="background:url(img/mb71.png) no-repeat;background-size: 100% 100%;position:absolute;width: 4.746696vh;height: 4.914523vh;top: 59.95428vh;left: 5.943398vh;"
+>
+</div>
+<div id="mb73" name="mb73" class="" style="background:url(img/mb73.png) no-repeat;background-size: 100% 100%;position:absolute;width: 4.746696vh;height: 4.914523vh;top: 59.95428vh;left: 103.0311vh;"
+>
+</div>
+<div id="mb72" name="mb72" class="" style="background:url(img/mb72.png) no-repeat;background-size: 100% 100%;position:absolute;width: 7.566145vh;height: 7.181175vh;top: 58.82097vh;left: 53.48225vh;"
+>
+</div>
+</div>
+<div id="slide28" name="slide28" class="slide" style="background:url(img/slide28.jpg) no-repeat;position:relative;background-size: 100% 100%;display:none;">
+<div class="next selectover2" style="background-size: 100% 100%;position:absolute;width: 5.608043vh;height: 5.228944vh;top: 5.727471vh;left: 132.8929vh;"
+ onclick="toslide('next', 28, 28)">
+</div>
+</div>
+<div id="slide29" name="slide29" class="slide" style="background:url(img/slide29.jpg) no-repeat;position:relative;background-size: 100% 100%;display:none;">
+<div id="btn292" name="btn292" class="selectover2 " style="background:url(img/btn292.png) no-repeat;background-size: 100% 100%;position:absolute;width: 31.28147vh;height: 10.41674vh;top: 83.33356vh;left: 32.39816vh;"
+ onclick="thisShape='btn292';;fun_check29();"
+>
+</div>
+<div id="btn291" name="btn291" class="selectover2 " style="background:url(img/btn291.png) no-repeat;background-size: 100% 100%;position:absolute;width: 31.28147vh;height: 10.41674vh;top: 69.79181vh;left: 59.76945vh;"
+ onclick="thisShape='btn291';;fun_check29();"
+>
+</div>
+<div id="btn293" name="btn293" class="selectover2 " style="background:url(img/btn293.png) no-repeat;background-size: 100% 100%;position:absolute;width: 31.28147vh;height: 10.41674vh;top: 83.33356vh;left: 88.25793vh;"
+ onclick="thisShape='btn293';;fun_check29();"
+>
+</div>
+<div id="mb91" name="mb91" class="" style="background:url(img/mb91.png) no-repeat;background-size: 100% 100%;position:absolute;width: 4.746696vh;height: 4.914523vh;top: 68.89973vh;left: 59.1128vh;"
+>
+</div>
+<div id="mb93" name="mb93" class="" style="background:url(img/mb93.png) no-repeat;background-size: 100% 100%;position:absolute;width: 4.746696vh;height: 4.914523vh;top: 82.67532vh;left: 88.12184vh;"
+>
+</div>
+<div id="mb92" name="mb92" class="" style="background:url(img/mb92.png) no-repeat;background-size: 100% 100%;position:absolute;width: 7.566145vh;height: 7.181175vh;top: 81.75112vh;left: 31.09496vh;"
+>
+</div>
+<div class="next selectover2" style="background-size: 100% 100%;position:absolute;width: 5.608043vh;height: 5.228944vh;top: 5.727471vh;left: 132.8929vh;"
+ onclick="toslide('next', 29, 29)">
+</div>
+</div>
+<div id="slide30" name="slide30" class="slide" style="background:url(img/slide30.jpg) no-repeat;position:relative;background-size: 100% 100%;display:none;">
+<div class="tomenu selectover2" style="background-size: 100% 100%;position:absolute;width: 5.608043vh;height: 5.228944vh;top: 5.900612vh;left: 4.860937vh;"
+ onclick="toslide(324,2, 30)">
+</div>
+</div>
+<div id="slide31" name="slide31" class="slide" style="background:url(img/slide31.jpg) no-repeat;position:relative;background-size: 100% 100%;display:none;">
+<div id="shape_34_1" name="shape_34_1" class="" style="background:url(img/shape_34_1.png) no-repeat;background-size: 100% 100%;position:absolute;width: 31.30236vh;height: 13.33333vh;top: 20.83313vh;left: 16.75743vh;"
+ onclick="toslide(257,3, 31)">
+</div>
+</div>
+<div id="slide32" name="slide32" class="slide" style="background:url(img/slide32.jpg) no-repeat;position:relative;background-size: 100% 100%;display:none;">
+</div>
+</center></body></html>
