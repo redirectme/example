@@ -14,7 +14,6 @@ function getRandomInRange(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-
 function anew(a=1){
 	if (a!=1 ) {
 		var ok = confirm("Вы действительно хотите начать всё заново?");
@@ -413,7 +412,10 @@ if(p55==0) hideShape('vert1'); else showShape('vert1');
 if(p44==0) hideShape('vert2'); else showShape('vert2');
 if(p22==0) hideShape('vert3'); else showShape('vert3');
 if(p66==0) hideShape('vert4'); else showShape('vert4');
+if(!p2) hideShape('vert5'); else showShape('vert5');
+if(p55==0||p66==0||p44==0 ||p22==0) {hideShape('yola'); showShape('yola0')} else {hideShape('yola0');showShape('yola'); }
 }
+function fun_puzzle(){$('#slide2').hide();if(!p2) {puzzle16();puzzle17();}else {toslide(0,31,31); }}
 before_slide[(3)]=function(){ if (p55!=0) return;
 for(var i=1;i<=6;i++) hideShape('no3'+i);
 $('#slide3 div.next').hide();
