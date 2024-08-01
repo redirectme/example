@@ -12,7 +12,7 @@
   <script src="jquery-3.5.1.min.js"></script>
   <style>
     body {
-      color: #000000;
+      color: #400040;
       font-family: sans-serif;
       overflow: hidden;
       margin: 0;
@@ -32,7 +32,6 @@
       text-decoration: underline;
       cursor: pointer;
     }
-
     #app, #loading, #error, #launch {
       position: absolute;
       top: 0;
@@ -41,6 +40,7 @@
       height: 100%;
       display:none;
     }
+
     .screen {
       display: flex;
       flex-direction: column;
@@ -164,7 +164,7 @@
 
   <div id="loading" class="screen">
     <noscript>Enable JavaScript</noscript>
-    <h1 class="loading-text">Соберите пазл</h1>
+    <h1 class="loading-text">ЗАГРУЗКА</h1>
     
     <div class="progress-bar-outer"><div class="progress-bar-inner" id="loading-inner"></div></div>
   </div>
@@ -176,16 +176,13 @@
       <p id="error-stack"></p>
     </details>
   </div>
-
   <script src="script.js"></script>
   <script src="script0.js?v=1"></script>
-
-
-
   <script>
 function getURLParameter(name) {
   return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search) || [null, ''])[1].replace(/\+/g, '%20')) || null;
 }
+
     const appElement = document.getElementById('app');
     const launchScreen = document.getElementById('launch');
     const loadingScreen = document.getElementById('loading');
@@ -210,9 +207,10 @@ function getURLParameter(name) {
 
 
       setProgress(0.1);
+
 function puzzle16(){
 $('#app').show();
-  try {
+    try {
       const scaffolding = new Scaffolding.Scaffolding();
       scaffolding.width = 480;
       scaffolding.height = 360;
@@ -237,7 +235,7 @@ $('#app').show();
       scaffolding.setAccentColor("#ff4c4c");
 
       try {
-        scaffolding.addCloudProvider(new Scaffolding.Cloud.WebSocketProvider(["wss://clouddata.turbowarp.org","wss://clouddata.turbowarp.xyz"], "p4-@Puzzle4(1)(2)(1).sb3"));
+        scaffolding.addCloudProvider(new Scaffolding.Cloud.WebSocketProvider(["wss://clouddata.turbowarp.org","wss://clouddata.turbowarp.xyz"], "gorod.sb3"));
       } catch (error) {
         console.error(error);
       }
@@ -309,7 +307,6 @@ $('#app').show();
         xhr.send();
       });
       })();
-
     const run = async () => {
       const projectData = await getProjectData();
       await scaffolding.loadProject(projectData);
@@ -330,6 +327,18 @@ $('#app').show();
 }
 function puzzle17(){}
   </script>
+<div style="position:absolute;bottom:50vh;left:0;height:1vh;">
+<!--LiveInternet counter--><a href="//www.liveinternet.ru/click"
+target="_blank"><img id="licntB412" width="31" height="31" style="border:0" 
+title="LiveInternet"
+src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+alt=""/></a><script>(function(d,s){d.getElementById("licntB412").src=
+"//counter.yadro.ru/hit?t44.6;r"+escape(d.referrer)+
+((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+(s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+";h"+escape(d.title.substring(0,150))+";"+Math.random()})
+(document,screen)</script><!--/LiveInternet-->
+</div>
 <center>
 <div id="slide1" name="slide1" class="slide" style="background:url(img/slide1.jpg) no-repeat;position:relative;background-size: 100% 100%;">
 <div id="shape_1_1" name="shape_1_1" class="selectover2 " style="background:url(img/shape_1_1.png) no-repeat;background-size: 100% 100%;position:absolute;width: 21.22671vh;height: 6.041965vh;top: 88.54194vh;left: 78.20317vh;"
@@ -472,6 +481,15 @@ function puzzle17(){}
 </div>
 <div class="next selectover2 " style="background-size: 100% 100%;position:absolute;width: 5.608043vh;height: 5.228944vh;top: 5.900627vh;left: 132.9457vh;"
  onclick="toslide('next', 5, 5)">
+</div>
+<div id="no51" name="no51"  style="background:url(img/vert1.png) no-repeat;background-size: 100% 100%;position:absolute;width: 7.566145vh;height: 7.181175vh;top: 24.80035vh;left: 62.49112vh;"
+>
+</div>
+<div id="no52" name="no52"  style="background:url(img/vert1.png) no-repeat;background-size: 100% 100%;position:absolute;width: 7.566145vh;height: 7.181175vh;top: 51.04998vh;left: 62.49112vh;"
+>
+</div>
+<div id="no53" name="no53"  style="background:url(img/vert1.png) no-repeat;background-size: 100% 100%;position:absolute;width: 7.566145vh;height: 7.181175vh;top: 76.69294vh;left: 62.49112vh;"
+>
 </div>
 </div>
 <div id="slide6" name="slide6" class="slide" style="background:url(img/slide6.jpg) no-repeat;position:relative;background-size: 100% 100%;display:none;">
@@ -822,8 +840,26 @@ function puzzle17(){}
  onclick="thisShape='w1620';fun_check16();"
 >
 </div>
-<div class="check17 check17()" style="background-size: 100% 100%;position:absolute;width: 7.540357vh;height: 7.151866vh;top: 4.850627vh;left: 131.1838vh;"
- onclick="thisShape='check17';fun_check17();"
+<div id="yes61" name="yes61"  style="background:url(img/vert1.png) no-repeat;background-size: 100% 100%;position:absolute;width: 7.566145vh;height: 7.181175vh;top: 14.3005vh;left: 3.933438vh;display:none;"
+>
+</div>
+<div id="yes62" name="yes62"  style="background:url(img/vert1.png) no-repeat;background-size: 100% 100%;position:absolute;width: 7.566145vh;height: 7.181175vh;top: 40.55013vh;left: 3.933438vh;display:none;"
+>
+</div>
+<div id="yes63" name="yes63"  style="background:url(img/vert1.png) no-repeat;background-size: 100% 100%;position:absolute;width: 7.566145vh;height: 7.181175vh;top: 67.84975vh;left: 3.933438vh;display:none;"
+>
+</div>
+<div id="yes64" name="yes64"  style="background:url(img/vert1.png) no-repeat;background-size: 100% 100%;position:absolute;width: 7.566145vh;height: 7.181175vh;top: 14.3005vh;left: 131.1838vh;display:none;"
+>
+</div>
+<div id="yes66" name="yes66"  style="background:url(img/vert1.png) no-repeat;background-size: 100% 100%;position:absolute;width: 7.566145vh;height: 7.181175vh;top: 67.84975vh;left: 131.1838vh;display:none;"
+>
+</div>
+<div id="yes65" name="yes65"  style="background:url(img/vert1.png) no-repeat;background-size: 100% 100%;position:absolute;width: 7.566145vh;height: 7.181175vh;top: 41.60011vh;left: 131.1838vh;display:none;"
+>
+</div>
+<div class="check17 " style="background-size: 100% 100%;position:absolute;width: 5.791406vh;height: 5.291922vh;top: 5.157859vh;left: 132.903vh;"
+ onclick="thisShape='check17';fun_check16();"
 >
 </div>
 </div>
@@ -831,7 +867,7 @@ function puzzle17(){}
 <div class="next selectover2" style="background-size: 100% 100%;position:absolute;width: 5.608043vh;height: 5.228944vh;top: 6.10576vh;left: 131.8699vh;"
  onclick="toslide('next', 17, 17)">
 </div>
-<div class="check17 " style="background-size: 100% 100%;position:absolute;width: 7.540357vh;height: 7.151866vh;top: 4.850627vh;left: 131.1838vh;"
+<div class="check17 selectover2" style="background-size: 100% 100%;position:absolute;width: 7.540357vh;height: 7.151866vh;top: 4.850627vh;left: 131.1838vh;"
  onclick="thisShape='check17';;fun_check17();"
 >
 </div>
@@ -943,7 +979,7 @@ function puzzle17(){}
 <div class="next selectover2" style="background-size: 100% 100%;position:absolute;width: 5.608043vh;height: 5.228944vh;top: 6.10576vh;left: 131.8699vh;"
  onclick="toslide('next', 18, 18)">
 </div>
-<div class="check17 " style="background-size: 100% 100%;position:absolute;width: 7.540357vh;height: 7.151866vh;top: 4.850627vh;left: 131.1838vh;"
+<div class="check17  selectover2" style="background-size: 100% 100%;position:absolute;width: 7.540357vh;height: 7.151866vh;top: 4.850627vh;left: 131.1838vh;"
  onclick="thisShape='check17';;fun_check18();"
 >
 </div>
@@ -1101,16 +1137,25 @@ function puzzle17(){}
  onclick="thisShape='w2316';fun_check23();"
 >
 </div>
-<div id="w2314" name="w2314" class="selectover2 " style="background:url(img/w2314.png) no-repeat;background-size: 100% 100%;position:absolute;width: 31.28147vh;height: 10.41674vh;top: 46.85004vh;left: 76.00444vh;"
+<div id="w2314" name="w2314" class="selectover2 " style="background:url(img/w2314.png) no-repeat;background-size: 100% 100%;position:absolute;width: 31.28147vh;height: 10.41674vh;top: 57.56031vh;left: 79.75522vh;"
  onclick="thisShape='w2314';fun_check23();"
 >
 </div>
-<div id="w2315" name="w2315" class="selectover2 " style="background:url(img/w2315.png) no-repeat;background-size: 100% 100%;position:absolute;width: 31.28147vh;height: 10.41674vh;top: 69.94972vh;left: 77.13055vh;"
+<div id="w2315" name="w2315" class="selectover2 " style="background:url(img/w2315.png) no-repeat;background-size: 100% 100%;position:absolute;width: 31.28147vh;height: 10.41674vh;top: 70.60545vh;left: 77.13055vh;"
  onclick="thisShape='w2315';fun_check23();"
 >
 </div>
 <div class="next selectover2 " style="background-size: 100% 100%;position:absolute;width: 5.608043vh;height: 5.228944vh;top: 5.727471vh;left: 132.4956vh;"
  onclick="toslide('next', 23, 23)">
+</div>
+<div id="mb31" name="mb31"  style="background:url(img/vert1.png) no-repeat;background-size: 100% 100%;position:absolute;width: 7.566145vh;height: 7.181175vh;top: 51.04998vh;left: 9.563985vh;display:none;"
+>
+</div>
+<div id="mb32" name="mb32"  style="background:url(img/vert1.png) no-repeat;background-size: 100% 100%;position:absolute;width: 7.566145vh;height: 7.181175vh;top: 51.04998vh;left: 54.54563vh;display:none;"
+>
+</div>
+<div id="mb33" name="mb33"  style="background:url(img/vert1.png) no-repeat;background-size: 100% 100%;position:absolute;width: 7.566145vh;height: 7.181175vh;top: 51.04998vh;left: 99.15389vh;display:none;"
+>
 </div>
 </div>
 <div id="slide24" name="slide24" class="slide" style="background:url(img/slide24.jpg) no-repeat;position:relative;background-size: 100% 100%;display:none;">
@@ -1218,6 +1263,27 @@ function puzzle17(){}
  onclick="thisShape='w2617';fun_check26();"
 >
 </div>
+<div id="mb62" name="mb62"  style="background:url(img/vert1.png) no-repeat;background-size: 100% 100%;position:absolute;width: 7.566145vh;height: 7.181175vh;top: 40.55013vh;left: 2.515418vh;display:none;"
+>
+</div>
+<div id="mb61" name="mb61"  style="background:url(img/vert1.png) no-repeat;background-size: 100% 100%;position:absolute;width: 7.566145vh;height: 7.181175vh;top: 18.50044vh;left: 2.515418vh;display:none;"
+>
+</div>
+<div id="mb63" name="mb63"  style="background:url(img/vert1.png) no-repeat;background-size: 100% 100%;position:absolute;width: 7.566145vh;height: 7.181175vh;top: 75.45558vh;left: 2.515418vh;display:none;"
+>
+</div>
+<div id="mb66" name="mb66"  style="background:url(img/vert1.png) no-repeat;background-size: 100% 100%;position:absolute;width: 7.566145vh;height: 7.181175vh;top: 42.81882vh;left: 133.7526vh;display:none;"
+>
+</div>
+<div id="mb67" name="mb67"  style="background:url(img/vert1.png) no-repeat;background-size: 100% 100%;position:absolute;width: 7.566145vh;height: 7.181175vh;top: 14.3005vh;left: 133.7526vh;display:none;"
+>
+</div>
+<div id="mb65" name="mb65"  style="background:url(img/vert1.png) no-repeat;background-size: 100% 100%;position:absolute;width: 7.566145vh;height: 7.181175vh;top: 77.46834vh;left: 133.7526vh;display:none;"
+>
+</div>
+<div id="mb64" name="mb64"  style="background:url(img/vert1.png) no-repeat;background-size: 100% 100%;position:absolute;width: 7.566145vh;height: 7.181175vh;top: 88.84946vh;left: 85.98729vh;display:none;"
+>
+</div>
 </div>
 <div id="slide27" name="slide27" class="slide" style="background:url(img/slide27.jpg) no-repeat;position:relative;background-size: 100% 100%;display:none;">
 <div id="btn271" name="btn271" class="selectover2 " style="background:url(img/btn271.png) no-repeat;background-size: 100% 100%;position:absolute;width: 31.28147vh;height: 10.41674vh;top: 61.45841vh;left: 6.702671vh;"
@@ -1288,5 +1354,6 @@ function puzzle17(){}
 </div>
 <div id="slide32" name="slide32" class="slide" style="background:url(img/slide32.jpg) no-repeat;position:relative;background-size: 100% 100%;display:none;">
 </div>
-</center></body>
+</center>
+</body>
 </html>
